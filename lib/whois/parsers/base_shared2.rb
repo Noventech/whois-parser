@@ -65,10 +65,10 @@ module Whois
 
 
       property_supported :registrar do
-        node("Sponsoring Registrar") do |str|
+        node("Registrar") do |str|
           Parser::Registrar.new(
-            :id           => node("Sponsoring Registrar IANA ID"),
-            :name         => node("Sponsoring Registrar")
+            :id           => node("Registrar IANA ID"),
+            :name         => node("Registrar")
           )
         end
       end
