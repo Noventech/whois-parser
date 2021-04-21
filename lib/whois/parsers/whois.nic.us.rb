@@ -19,6 +19,25 @@ module Whois
     #   The Example parser for the list of all available methods.
     #
     class WhoisNicUs < BaseShared2
+
+      property_supported :created_on do
+        node("Creation Date") do |value|
+          parse_time(value)
+        end
+      end
+
+      property_supported :updated_on do
+        node("Updated Date") do |value|
+          parse_time(value)
+        end
+      end
+
+      property_supported :expires_on do
+        node("Registry Expiry Date") do |value|
+          parse_time(value)
+        end
+      end
+
     end
 
   end
