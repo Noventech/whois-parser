@@ -84,6 +84,14 @@ module Whois
               :organization => nil,
               :url          => nil
           )
+        end ||
+        node("Registrar IANA ID") do
+          Parser::Registrar.new(
+              :id           => node("Registrar IANA ID"),
+              :name         => node("Registrar"),
+              :organization => nil,
+              :url          => nil
+          )
         end
       end
 
